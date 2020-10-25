@@ -69,6 +69,8 @@ const StickyNotes = () => {
     }
   }, [notes]);
 
+  console.log("notes, ", notes);
+
   return (
     <div>
       {notes.map((note) => {
@@ -101,7 +103,10 @@ const StickyNotes = () => {
               <Header>
                 <StyledButton onClick={handleDelete}>X</StyledButton>
               </Header>
-              <StyledTextArea onChange={handleChange} />
+              <StyledTextArea
+                onChange={handleChange}
+                value={note.note ? note.note : ""}
+              />
             </Container>
           </ShadowRoot>
         );
